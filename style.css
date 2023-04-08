@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --clr-pri-red: hsl(0, 100%, 74%);
+    --clr-pri-green: hsl(154, 59%, 51%);
+
+    --clr-accent-blue: hsl(248, 32%, 49%);
+
+    --clr-neutral-dark-blue: hsl(249, 10%, 26%);
+    --clr-neutral-grayish-blue: hsl(246, 25%, 77%);
+
+    --ff-main: 'Poppins', sans-serif;
+
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+}
+/* utilities */
+
+.wrapper{
+    padding: 1rem;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px rgba(0,0,0,0.2);
+    margin: 1.5rem;
+}
+
+.bold-text{
+    font-weight: var(--fw-semibold);
+}
+
+/* general styling */
+body{
+    background-color: var(--clr-pri-red);
+    background-image: url(images/bg-intro-mobile.png);
+    font-family: var(--ff-main);
+    min-height: 100vh;
+    color: white;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+@media (min-width:700px) {
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.info{
+    margin: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.info h1{
+    font-size: 1.75rem;
+    font-weight: var(--fw-bold);
+}
+@media (min-width:700px) {
+    .info{
+        margin: 5rem;
+    }
+    .info h1{
+        font-size: 3rem;
+        line-height: 1.3;
+    }
+}
+
+.info p{
+    font-weight: var(--fw-regular);
+    line-height: 1.8;
+}
+
+.form{
+    display: grid;
+
+}
+
+.trial{
+    --local-padding: 4rem;
+    background-color: var(--clr-accent-blue);
+    padding-left: var(--local-padding);
+    padding-right: var(--local-padding);
+    margin-bottom: .125rem;
+}
+
+.trial p{
+    font-size: 16px;
+    font-weight: var(--fw-regular);
+    text-align: center;
+}
+
+.form-elements{
+    display: grid;
+    justify-items: stretch;
+    align-content: center;
+    position: relative;
+    background-color: white;
+    color: var(--clr-neutral-dark-blue);
+    padding: 2rem;
+    gap: .5rem;
+}
+
+form{
+    display: grid;
+    gap: 1rem;
+}
+
+.input-field {
+    position: relative;
+}
+
+.input-field img {
+    position: absolute;
+    right:5%;
+    bottom: 45%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.input-field img.active {
+    opacity: 1;
+}
+
+
+.input-field .error {
+    padding: 0;
+    margin-top: 3px;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    font-weight: var(--fw-medium);
+    color: var(--clr-pri-red);
+    transform: translateX(1rem);
+    opacity: 0;
+    transition: transform 1,
+                opacity 1;
+    
+}
+
+.input-field .error-active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.text-area{
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    height: 3.5rem;
+    padding: 8px 16px;
+}
+
+.button{
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: var(--fw-medium);
+    line-height: 1;
+    border: 0;
+    background-color: var(--clr-pri-green);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px hsl(154, 59%, 41%);
+    transition: background-color .3s;
+    
+}
+
+.button:hover{
+    background-color: hsl(154, 59%, 61%);
+}
+
+.form-elements p {
+    text-align: center;
+    padding: .5rem;
+    font-size: 12px;
+    color: rgba(0,0,0,0.5)
+}
+
+.form-elements span{
+    color: var(--clr-pri-red);
+}
+
+input:focus{
+    outline: 0;
+}
+
+.input-field.error input{
+    border-color: var(--clr-pri-red);
+}
